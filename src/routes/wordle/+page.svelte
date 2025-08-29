@@ -58,9 +58,7 @@
 	 */
 	function update(event: MouseEvent) {
 		event.preventDefault();
-		const key = (event.target as HTMLButtonElement).getAttribute(
-			'data-key'
-		);
+		const key = (event.target as HTMLButtonElement).getAttribute('data-key');
 
 		if (key === 'backspace') {
 			currentGuess = currentGuess.slice(0, -1);
@@ -161,7 +159,7 @@
 					back
 				</button>
 
-				{#each ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'] as row (row)}
+				{#each ['ещ', 'фцужэнгшүзкъ', 'йыбөахролдп', 'ячёсмитьвю'] as row (row)}
 					<div class="row">
 						{#each row as letter, index (index)}
 							<button
@@ -352,18 +350,20 @@
 		position: absolute;
 		bottom: 0;
 		width: calc(1.5 * var(--size));
-		height: calc(1 / 3 * (100% - 2 * var(--gap)));
+		height: calc(1 / 4 * (100% - 2 * var(--gap)));
 		text-transform: uppercase;
 		font-size: calc(0.3 * var(--size));
 		padding-top: calc(0.15 * var(--size));
 	}
 
 	.keyboard button[data-key='enter'] {
-		right: calc(50% + 3.5 * var(--size) + 0.8rem);
+		/* right: calc(50% + 3.5 * var(--size) + 0.8rem); */
+		right: 93%;
 	}
 
 	.keyboard button[data-key='backspace'] {
-		left: calc(50% + 3.5 * var(--size) + 0.8rem);
+		/* left: calc(50% + 3.5 * var(--size) + 0.8rem); */
+		left: 93%;
 	}
 
 	.keyboard button[data-key='enter']:disabled {
